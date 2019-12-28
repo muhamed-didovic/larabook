@@ -40,5 +40,4 @@ class UserPresenter extends Presenter
 
         return "{$count} {$plural}";
     }
-
 }

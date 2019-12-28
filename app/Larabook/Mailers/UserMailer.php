@@ -21,5 +21,4 @@ class UserMailer extends Mailer
 
         return $this->sendTo($user, $subject, $view);
     }
-    
-} 
+}

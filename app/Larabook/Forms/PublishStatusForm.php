@@ -19,6 +19,4 @@ class PublishStatusForm extends FormValidator
     protected $rules = [
         'body' => 'required'
     ];
-
-    
-} 
+}

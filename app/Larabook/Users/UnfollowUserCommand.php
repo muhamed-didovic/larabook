@@ -6,7 +6,8 @@
  * @author  Valentin PRUGNAUD <valentin@whatdafox.com>
  * @url http://www.foxted.com
  */
-class UnfollowUserCommand {
+class UnfollowUserCommand
+{
 
     /**
      * @var string
@@ -27,5 +28,4 @@ class UnfollowUserCommand {
         $this->userId = $userId;
         $this->userIdToUnfollow = $userIdToUnfollow;
     }
-
 }

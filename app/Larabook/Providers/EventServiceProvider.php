@@ -20,5 +20,4 @@ class EventServiceProvider extends ServiceProvider
     {
         $this->app['events']->listen('Larabook.*', 'Larabook\Handlers\EmailNotifier');
     }
-
 }
