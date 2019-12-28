@@ -28,10 +28,12 @@ class RegisterUserCommandHandler implements CommandHandler
      * @param $command
      * @return mixed
      */
-    public function handle( $command )
+    public function handle($command)
     {
         $user = User::register(
-            $command->username, $command->email, $command->password
+            $command->username,
+            $command->email,
+            $command->password
         );
 
         $this->repository->save($user);
@@ -40,5 +42,4 @@ class RegisterUserCommandHandler implements CommandHandler
 
         return $user;
     }
-
 }

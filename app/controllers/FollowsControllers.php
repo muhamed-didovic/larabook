@@ -3,16 +3,17 @@
 use Larabook\Users\FollowUserCommand;
 use Larabook\Users\UnfollowUserCommand;
 
-class FollowsController extends \BaseController {
+class FollowsController extends \BaseController
+{
 
 
-	/**
-	 * Follow user
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
+    /**
+     * Follow user
+     *
+     * @return Response
+     */
+    public function store()
+    {
         $input = array_add(Input::all(), 'userId', Auth::id());
 
         $this->execute(FollowUserCommand::class, $input);
@@ -20,7 +21,7 @@ class FollowsController extends \BaseController {
         Flash::success('You are now following this user.');
 
         return Redirect::back();
-	}
+    }
 
     /**
      * Unfollow a user
@@ -28,8 +29,8 @@ class FollowsController extends \BaseController {
      * @param $userIdToUnfollow
      * @return Response
      */
-	public function destroy($userIdToUnfollow)
-	{
+    public function destroy($userIdToUnfollow)
+    {
         $input = array_add(Input::all(), 'userId', Auth::id());
 
         $this->execute(UnfollowUserCommand::class, $input);
@@ -37,7 +38,5 @@ class FollowsController extends \BaseController {
         Flash::success("You have now unfollowed this user.");
 
         return Redirect::back();
-	}
-
-
+    }
 }

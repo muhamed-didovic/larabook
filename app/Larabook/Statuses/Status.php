@@ -37,7 +37,7 @@ class Status extends \Eloquent
      * @param $body
      * @return static
      */
-    static public function publish($body)
+    public static function publish($body)
     {
         $status = new static(compact('body'));
 
@@ -45,5 +45,4 @@ class Status extends \Eloquent
 
         return $status;
     }
-    
 }

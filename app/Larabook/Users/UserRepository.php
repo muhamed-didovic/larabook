@@ -64,8 +64,8 @@ class UserRepository
      * @param      $userIdToUnfollow
      * @param User $user
      */
-    public function unfollow( $userIdToUnfollow, User $user )
+    public function unfollow($userIdToUnfollow, User $user)
     {
         return $user->followedUsers()->detach($userIdToUnfollow);
     }
-} 
+}

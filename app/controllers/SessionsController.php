@@ -2,7 +2,8 @@
 
 use Larabook\Forms\SignInForm;
 
-class SessionsController extends \BaseController {
+class SessionsController extends \BaseController
+{
     /**
      * @var Larabook\Forms\SignInForm
      */
@@ -11,7 +12,7 @@ class SessionsController extends \BaseController {
     /**
      * Constructor
      */
-    public function __construct( SignInForm $signInForm )
+    public function __construct(SignInForm $signInForm)
     {
         $this->signInForm = $signInForm;
 
@@ -19,36 +20,34 @@ class SessionsController extends \BaseController {
     }
 
     /**
-	 * Show the form signing in
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		return View::make('sessions.create');
-	}
+     * Show the form signing in
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return View::make('sessions.create');
+    }
 
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
     {
         $formData = Input::only('email', 'password');
 
-        $this->signInForm->validate( $formData );
+        $this->signInForm->validate($formData);
 
-        if( ! Auth::attempt($formData) )
-        {
+        if (! Auth::attempt($formData)) {
             Flash::message('We were unable to sign you in. Please check you credentials and try again!');
             return Redirect::back()->withInput();
         }
         Flash::message('Welcome back');
         return Redirect::intended('statuses');
-
-	}
+    }
 
     /**
      * Log a user out of Larabook
@@ -61,5 +60,4 @@ class SessionsController extends \BaseController {
         Flash::message('You have now been logged out.');
         return Redirect::home();
     }
-
 }
