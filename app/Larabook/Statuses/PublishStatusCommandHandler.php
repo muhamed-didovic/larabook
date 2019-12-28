@@ -15,7 +15,7 @@ class PublishStatusCommandHandler implements CommandHandler
 
     protected $statusRepository;
 
-    public function __construct( StatusRepository $statusRepository )
+    public function __construct(StatusRepository $statusRepository)
     {
         $this->statusRepository = $statusRepository;
     }
@@ -26,7 +26,7 @@ class PublishStatusCommandHandler implements CommandHandler
      * @param $command
      * @return mixed
      */
-    public function handle( $command )
+    public function handle($command)
     {
         $status = Status::publish($command->body);
 
@@ -36,5 +36,4 @@ class PublishStatusCommandHandler implements CommandHandler
 
         return $status;
     }
-
 }

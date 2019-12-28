@@ -8,7 +8,8 @@ use Laracasts\Commander\CommandHandler;
  * @author  Valentin PRUGNAUD <valentin@whatdafox.com>
  * @url http://www.foxted.com
  */
-class UnfollowUserCommandHandler implements CommandHandler {
+class UnfollowUserCommandHandler implements CommandHandler
+{
 
     /**
      * @var UserRepository
@@ -19,7 +20,7 @@ class UnfollowUserCommandHandler implements CommandHandler {
      * Constructor
      * @param UserRepository $userRepo
      */
-    public function __construct( UserRepository $userRepo )
+    public function __construct(UserRepository $userRepo)
     {
         $this->userRepo = $userRepo;
     }
@@ -35,5 +36,4 @@ class UnfollowUserCommandHandler implements CommandHandler {
         $user = $this->userRepo->findById($command->userId);
         $this->userRepo->unfollow($command->userIdToUnfollow, $user);
     }
-
 }

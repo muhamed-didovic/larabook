@@ -6,7 +6,7 @@
  * @author Valentin PRUGNAUD <valentin@whatdafox.com>
  * @url http://www.foxted.com
  */
-trait FollowableTrait 
+trait FollowableTrait
 {
 
     /**
@@ -35,11 +35,10 @@ trait FollowableTrait
      * @param User $otherUser
      * @return bool
      */
-    public function isFollowedBy( User $otherUser )
+    public function isFollowedBy(User $otherUser)
     {
         $idsWhoOtherUserFollows = $otherUser->followedUsers()->lists('followed_id');
 
         return in_array($this->id, $idsWhoOtherUserFollows);
     }
-
-} 
+}

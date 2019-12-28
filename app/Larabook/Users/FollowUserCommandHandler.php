@@ -17,7 +17,7 @@ class FollowUserCommandHandler implements CommandHandler
      * Constructor
      * @param UserRepository $userRepo
      */
-    public function __construct( UserRepository $userRepo )
+    public function __construct(UserRepository $userRepo)
     {
         $this->userRepo = $userRepo;
     }
@@ -28,14 +28,12 @@ class FollowUserCommandHandler implements CommandHandler
      * @param $command
      * @return mixed
      */
-    public function handle( $command )
+    public function handle($command)
     {
         $user = $this->userRepo->findById($command->userId);
 
         $this->userRepo->follow($command->userIdToFollow, $user);
 
         return $user;
-
     }
-
 }

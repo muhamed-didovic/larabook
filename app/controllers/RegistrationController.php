@@ -28,14 +28,14 @@ class RegistrationController extends \BaseController
         $this->beforeFilter('guest');
     }
 
-	/**
-	 * Show a form to register the user
-	 * @return Response
-	 */
-	public function create()
-	{
-		return View::make('registration.create');
-	}
+    /**
+     * Show a form to register the user
+     * @return Response
+     */
+    public function create()
+    {
+        return View::make('registration.create');
+    }
 
     /**
      * Create a new Larabook user
@@ -43,7 +43,7 @@ class RegistrationController extends \BaseController
      */
     public function store()
     {
-        $this->registrationForm->validate( Input::all() );
+        $this->registrationForm->validate(Input::all());
 
         $user = $this->execute(RegisterUserCommand::class);
 
@@ -53,5 +53,4 @@ class RegistrationController extends \BaseController
 
         return Redirect::home();
     }
-
 }

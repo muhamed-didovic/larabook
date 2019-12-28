@@ -19,10 +19,9 @@ class PublishStatusCommand
      * @param $body
      * @param $userId
      */
-    public function __construct( $body, $userId )
+    public function __construct($body, $userId)
     {
         $this->body = $body;
         $this->userId = $userId;
     }
-
 }
