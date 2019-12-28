@@ -38,11 +38,11 @@ class StatusRepository
      * @param User $user
      * @return mixed
      */
-    public function getFeedForUser( User $user )
+    public function getFeedForUser(User $user)
     {
         $userIds = $user->followedUsers()->lists('followed_id');
         $userIds[] = $user->id;
 
         return Status::whereIn('user_id', $userIds)->latest()->get();
     }
-} 
+}
