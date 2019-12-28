@@ -35,6 +35,4 @@ class EmailNotifier extends EventListener
     {
         $this->mailer->sendWelcomeMessageTo($event->user);
     }
-
-    
-} 
+}

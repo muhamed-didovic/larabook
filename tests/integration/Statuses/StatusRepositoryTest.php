@@ -47,7 +47,7 @@ class StatusRepositoryTest extends \Codeception\TestCase\Test
     {
         // Given I have an unsaved status
         $status = TestDummy::create('Larabook\Statuses\Status', [
-            'user_id' => NULL,
+            'user_id' => null,
             'body'    => 'My status'
         ]);
         // And an existing user
@@ -63,7 +63,5 @@ class StatusRepositoryTest extends \Codeception\TestCase\Test
 
         // And the status should have the correct user_id
         $this->assertEquals($user->id, $savedStatus->user_id);
-
     }
-
 }

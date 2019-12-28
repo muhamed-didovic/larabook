@@ -19,6 +19,4 @@ class StatusPresenter extends Presenter
     {
         return $this->created_at->diffForHumans();
     }
-
-    
-} 
+}
