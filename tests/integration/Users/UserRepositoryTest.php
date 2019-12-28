@@ -75,5 +75,4 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
             'followed_id' => $susan->id
         ]);
     }
-
 }

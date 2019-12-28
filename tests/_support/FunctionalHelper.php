@@ -15,14 +15,14 @@ class FunctionalHelper extends \Codeception\Module
         $username = "Foobar";
         $password = "foo";
 
-        $this->haveAnAccount( compact( 'email', 'password', 'username' ) );
+        $this->haveAnAccount(compact('email', 'password', 'username'));
 
         $I = $this->getModule('Laravel4');
 
-        $I->amOnPage( '/login' );
-        $I->fillField( 'email', $email );
-        $I->fillField( 'password', $password );
-        $I->click( 'Sign In' );
+        $I->amOnPage('/login');
+        $I->fillField('email', $email);
+        $I->fillField('password', $password);
+        $I->click('Sign In');
     }
 
     public function haveAnAccount($overrides = [])
@@ -43,5 +43,4 @@ class FunctionalHelper extends \Codeception\Module
     {
         return TestDummy::create($model, $overrides);
     }
-
 }
